@@ -1,26 +1,22 @@
-package com.newlecture.web.controller;
+package com.newlecture.web.controller.notice;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.Controller;
-import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
-public class indexController implements Controller {
+public class DetailController implements Controller {
 
 	@Override
 	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		// TODO Auto-generated method stub
-		//System.out.println("index controller");
 		
-		ModelAndView mv = new ModelAndView("index");
+		ModelAndView mv = new ModelAndView("notice/detail");
 		mv.addObject("data","Hello Spring MVC~");
-		//mv.setViewName("/WEB-INF/view/index.jsp");
+		//mv.setViewName("/WEB-INF/view/notice/detail.jsp");
 	
 		return mv;
 	}
-	
-	
 
 }
