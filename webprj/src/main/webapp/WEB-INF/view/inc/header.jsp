@@ -19,7 +19,6 @@
                     <h1>메인메뉴</h1>
                     <ul>
                         <li><a href="/guide">학습가이드</a></li>
-
                         <li><a href="/course">강좌선택</a></li>
                         <li><a href="/answeris/index">AnswerIs</a></li>
                     </ul>
