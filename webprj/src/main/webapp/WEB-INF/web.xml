@@ -7,10 +7,28 @@
   version="3.1"
   metadata-complete="true">
   
+  <!-- 톰켓,세션이 끝날때 시작할때 이벤트 처리 -->
+  <listener>
+  	<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
+  <context-param>
+  	<param-name>contextConfigLocation</param-name>
+  	<param-value>
+  		/WEB-INF/spring/service-context.xml
+  		/WEB-INF/spring/security-context.xml
+  	</param-value>
+  </context-param>
+  
   <!-- DispatcherServlet copy qualified name 해서 붙여놓고 .class지우기 -->
   <servlet>
   	<servlet-name>dispatcher</servlet-name>
   	<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+  	<init-param>
+  		<param-name>contextConfigLocation</param-name>
+  		<param-value>/WEB-INF/spring/servlet-context.xml</param-value>
+  	</init-param>
+  	<load-on-startup>1</load-on-startup> <!-- 우선순위 가장 먼저 -->
+  	<async-supported>true</async-supported> <!-- 서블릿 비동기적 로드 -->
   </servlet>
   <servlet-mapping>
   	<servlet-name>dispatcher</servlet-name>
