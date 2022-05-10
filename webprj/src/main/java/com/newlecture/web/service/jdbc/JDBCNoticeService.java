@@ -12,6 +12,8 @@ import java.util.List;
 
 import javax.sql.DataSource;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import com.newlecture.web.entity.Notice;
 import com.newlecture.web.service.NoticeService;
 
@@ -24,6 +26,7 @@ public class JDBCNoticeService implements NoticeService {
 //	private String driver = "oracle.jdbc.driver.OracleDriver";
 	
 	//위 4개의 정보를 담고 있음-DataSource
+	@Autowired
 	private DataSource dataSource;
 	
 	public void setDataSource(DataSource dataSource) {

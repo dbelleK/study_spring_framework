@@ -1,16 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.springframework.org/schema/beans
         https://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/mvc
-        https://www.springframework.org/schema/mvc/spring-mvc.xsd">
+        https://www.springframework.org/schema/mvc/spring-mvc.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd">
+       
+      <!-- 어노테이션 사용하기위함 -->  
+     <context:annotation-config/>
 
 	<!-- /index url요청이 오면 class를 객체화하여 호출 -->
     <bean id="/index" class="com.newlecture.web.controller.indexController"/> 
     <bean id="/notice/list" class="com.newlecture.web.controller.notice.ListController">  
-    	<property name="noticeService" ref="noticeService" /> 
+    	<!-- <property name="noticeService" ref="noticeService" />  -->
     	<!-- listController의 name=setter명(set생략,소문자시작), ref=매개변수명 -->
     	<!-- 인터페이스명 -->
     </bean>
