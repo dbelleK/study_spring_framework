@@ -12,7 +12,9 @@ public class ListController implements Controller {
 	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		// TODO Auto-generated method stub
 		
-		ModelAndView mv = new ModelAndView("notice/list");
+		/* ModelAndView mv = new ModelAndView("notice/list"); */
+		/* tiles.xml¿ß«ÿ */
+		ModelAndView mv = new ModelAndView("notice.list");
 		mv.addObject("data","Hello Spring MVC~");
 		//mv.setViewName("/WEB-INF/view/notice/list.jsp");
 	

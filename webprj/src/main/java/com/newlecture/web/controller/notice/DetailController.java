@@ -12,10 +12,10 @@ public class DetailController implements Controller {
 	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		// TODO Auto-generated method stub
 		
-		ModelAndView mv = new ModelAndView("notice/detail");
+		ModelAndView mv = new ModelAndView("notice.detail");
 		mv.addObject("data","Hello Spring MVC~");
 		//mv.setViewName("/WEB-INF/view/notice/detail.jsp");
-	
+
 		return mv;
 	}
 
