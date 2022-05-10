@@ -24,10 +24,10 @@
   
   
   <!-- 와일트 카드 이용 -->
-  <definition name="root.*" template="/WEB-INF/view/inc/layout.jsp">
+  <definition name="root.*" template="/WEB-INF/view/inc/layout.jsp"> <!-- 루트에 있는 페이지를 만든다-->
     <put-attribute name="title" value="공지사항" />
     <put-attribute name="header" value="/WEB-INF/view/inc/header.jsp" />
-    <put-attribute name="body" value="/WEB-INF/view/{1}.jsp" /> <!-- index.jsp ... -->
+    <put-attribute name="body" value="/WEB-INF/view/{1}.jsp" /> <!-- 루트에 있는페이지는 index.jsp ... -->
     <put-attribute name="footer" value="/WEB-INF/view/inc/footer.jsp" />
   </definition>
   

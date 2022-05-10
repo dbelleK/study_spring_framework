@@ -23,13 +23,17 @@
     <bean id="/notice/detail" class="com.newlecture.web.controller.notice.DetailController"/>  
     
     
-	<!-- tilesViewResolver설정 -->
+	<!-- tilesViewResolver설정 : 기존의 viewResolver이 받아서 prefix,suffix로 쓰는 InternalResourceViewResolver 대신
+	     xml파일 설정으로 jsp를 만든다  -->
+	<!-- InternalResourceViewResolver 는 UrlBasedViewResolver 의 하위 클래스 -->
+	<!-- UrlBasedViewResolver-페이지를 합지고 이어주는 끈 역할 (타일즈를 이용하기 위한 뷰 리졸버)-->
 	<bean class="org.springframework.web.servlet.view.UrlBasedViewResolver">
 	    <property name="viewClass" 
 	    		  value="org.springframework.web.servlet.view.tiles3.TilesView" />
 	    <property name="order" value="1" /> <!-- 순서1 -->
 	</bean>
 	
+	<!-- TilesConfigurer : tiles.xml파일을 받아오는 소스 설정  -->
 	<bean
 	    class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
 	    <property name="definitions" value="/WEB-INF/tiles.xml" />
@@ -38,8 +42,8 @@
 
 	<!-- view까지 경로 ?-->
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<property name="prefix" value="/WEB-INF/view/"></property>
-		<property name="suffix" value=".jsp"></property>
+		<property name="prefix" value="/WEB-INF/view/"></property> <!-- prefix-페이지 찾기위한 접두사 -->
+		<property name="suffix" value=".jsp"></property> <!-- suffix-페이지 찾기위한 접미사 -->
 		<property name="order" value="2" /> <!-- 순서2 -->
 		
 	</bean>
