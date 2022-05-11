@@ -13,10 +13,13 @@ import java.util.List;
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import com.newlecture.web.entity.Notice;
 import com.newlecture.web.service.NoticeService;
 
+@Service //@Component->@Controller, @Service, @Repository의 의미를 담고 있음
 public class JDBCNoticeService implements NoticeService {
 	
 	//위치변경시 재바포 컴파일 .. 불합당 -->dispatcher-servlet.xml

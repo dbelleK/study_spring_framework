@@ -11,16 +11,20 @@
         https://www.springframework.org/schema/context/spring-context.xsd">
        
       <!-- 어노테이션 사용하기위함 -->  
-     <context:annotation-config/>
+     <!-- <context:annotation-config/> -->
+     <context:component-scan base-package="com.newlecture.web.controller"/>
 
-	<!-- /index url요청이 오면 class를 객체화하여 호출 -->
-    <bean id="/index" class="com.newlecture.web.controller.indexController"/> 
-    <bean id="/notice/list" class="com.newlecture.web.controller.notice.ListController">  
-    	<!-- <property name="noticeService" ref="noticeService" />  -->
-    	<!-- listController의 name=setter명(set생략,소문자시작), ref=매개변수명 -->
-    	<!-- 인터페이스명으로 바뀔 수 있다 -->
-    </bean>
-    <bean id="/notice/detail" class="com.newlecture.web.controller.notice.DetailController"/>  
+
+     <!-- 어노테이션 설정으로 인해 지워버린다 -->
+	 <!-- /index url요청이 오면 class를 객체화하여 호출 -->
+    <!-- <bean id="/index" class="com.newlecture.web.controller.indexController"/>  -->
+    <!-- <bean id="/notice/list" class="com.newlecture.web.controller.notice.ListController">  
+    	     <property name="noticeService" ref="noticeService" /> 
+    	     listController의 name=setter명(set생략,소문자시작), ref=매개변수명
+    	      인터페이스명으로 바뀔 수 있다
+         </bean> -->
+   <!--  <bean id="/notice/detail" class="com.newlecture.web.controller.notice.DetailController"/> -->
+     
     
     
 	<!-- tilesViewResolver설정 : 기존의 viewResolver이 받아서 prefix,suffix로 쓰는 InternalResourceViewResolver 대신
@@ -49,6 +53,19 @@
 	</bean>
 	
 	<mvc:resources location="/static/" mapping="/**"></mvc:resources>
+	
+	<!-- 한글깨짐 방지 -->
+	<mvc:annotation-driven>
+	<mvc:message-converters> <!-- @ResponseBody로 String 처리할때 한글처리 -->
+		<bean class="org.springframework.http.converter.StringHttpMessageConverter">
+			<property name="supportedMediaTypes">
+				<list>
+					<value>text/html;charset=UTF-8</value>
+				</list>
+			</property>
+		</bean>
+	</mvc:message-converters>
+</mvc:annotation-driven>
 	
 
 	
