@@ -18,7 +18,7 @@
     <bean id="/notice/list" class="com.newlecture.web.controller.notice.ListController">  
     	<!-- <property name="noticeService" ref="noticeService" />  -->
     	<!-- listController의 name=setter명(set생략,소문자시작), ref=매개변수명 -->
-    	<!-- 인터페이스명 -->
+    	<!-- 인터페이스명으로 바뀔 수 있다 -->
     </bean>
     <bean id="/notice/detail" class="com.newlecture.web.controller.notice.DetailController"/>  
     

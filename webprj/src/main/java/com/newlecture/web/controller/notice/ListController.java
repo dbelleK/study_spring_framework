@@ -35,7 +35,7 @@ public class ListController implements Controller {
 		//mv.addObject("data","Hello Spring MVC~");
 		//mv.setViewName("/WEB-INF/view/notice/list.jsp");
 		
-		List<Notice> list = noticeService.getList(1, "TITLE", ""); /*int page, String field, String query*/
+		List<Notice> list = noticeService.getList(1, "TITLE", ""); /*int page, String field, String query (""->¸ðµç°Í)*/ 
 		mv.addObject("list",list);
 	
 		return mv;

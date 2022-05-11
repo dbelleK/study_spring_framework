@@ -3,6 +3,7 @@ package com.newlecture.web.entity;
 import java.util.Date;
 
 public class Notice {
+	
 	private int id;
 	private String title;
 	private String writerId;
@@ -14,9 +15,6 @@ public class Notice {
 	public Notice() {
 		
 	}
-	
-	
-
 
 
 	public Notice(int id, String title, String writerId, Date regDate, String content, int hit, String files) {
@@ -29,9 +27,6 @@ public class Notice {
 		this.hit = hit;
 		this.files = files;
 	}
-
-
-
 
 
 	public int getId() {
